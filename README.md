@@ -25,7 +25,3 @@ It automatically generates a short and meaningful summary from a long text docum
 - NumPy  
 - Pandas  
 - Scikit-learn  
-
----
-
-## 📁 Project Structure
