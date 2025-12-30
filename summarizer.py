@@ -8,10 +8,8 @@ nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
 
-# Read input text
 text = open("dataset.txt", "r", encoding="utf-8").read()
 
-# Preprocessing
 text = re.sub(r'\[[0-9]*\]', ' ', text)
 text = re.sub(r'\s+', ' ', text)
 
@@ -42,12 +40,10 @@ for sent in sentences:
             else:
                 sentence_scores[sent] += word_frequencies[word]
 
-# Select top sentences
 summary_sentences = heapq.nlargest(3, sentence_scores, key=sentence_scores.get)
 
 summary = ' '.join(summary_sentences)
 
-# Save output
 with open("output.txt", "w", encoding="utf-8") as f:
     f.write(summary)
 
